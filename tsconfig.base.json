@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@ozon/shared/model-types": ["./libs/shared/model-types/src/index.ts"],
+      "@ozon/frontend/ui-kit": ["./libs/frontend/ui-kit/src/index.ts"],
+      "@ozon/frontend/data-access-api/controllers/users": [
+        "./libs/frontend/data-access-api/src/lib/controllers/users/index.ts"
+      ],
+      "@ozon/frontend/util-utils": ["./libs/frontend/util-utils/src/index.ts"],
+      "@ozon/backend/util-utils": ["./libs/backend/util-utils/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,7 @@
+@let users = usersList();
+
+@for (user of users; track user) {
+  <p>{{ user }}</p>
+}
+
+<router-outlet></router-outlet>
