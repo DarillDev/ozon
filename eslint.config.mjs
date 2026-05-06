@@ -32,7 +32,12 @@ export default [
             // --- type rules ---
             {
               sourceTag: 'type:app',
-              onlyDependOnLibsWithTags: ['type:ui', 'type:data-access', 'type:util', 'type:lib'],
+              onlyDependOnLibsWithTags: [
+                'type:ui',
+                'type:data-access',
+                'type:util',
+                'type:lib',
+              ],
             },
             {
               sourceTag: 'type:ui',
@@ -40,7 +45,11 @@ export default [
             },
             {
               sourceTag: 'type:data-access',
-              onlyDependOnLibsWithTags: ['type:data-access', 'type:util', 'type:lib'],
+              onlyDependOnLibsWithTags: [
+                'type:data-access',
+                'type:util',
+                'type:lib',
+              ],
             },
             {
               sourceTag: 'type:util',
@@ -64,5 +73,13 @@ export default [
     ],
     // Override or add rules here
     rules: {},
+  },
+  {
+    files: ['**/*.json'],
+    // Override or add rules here
+    rules: {},
+    languageOptions: {
+      parser: await import('jsonc-eslint-parser'),
+    },
   },
 ];

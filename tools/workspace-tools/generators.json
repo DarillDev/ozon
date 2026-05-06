@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "feature-lib": {
+      "factory": "./src/generators/feature-lib/feature-lib",
+      "schema": "./src/generators/feature-lib/schema.json",
+      "description": "Create a new frontend feature library"
+    }
+  }
+}

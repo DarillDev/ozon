@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "nx": {
+      "command": "pnpm",
+      "args": ["nx", "mcp"],
+      "cwd": "/Users/schekan/repositories/ozon"
+    },
+    "angular": {
+      "command": "pnpm",
+      "args": ["dlx", "angular-mcp"]
+    }
+  }
+}

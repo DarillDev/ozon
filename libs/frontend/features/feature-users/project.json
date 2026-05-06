@@ -1,0 +1,21 @@
+{
+  "name": "feature-users",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/frontend/features/feature-users/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:frontend", "type:feature"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/frontend/features/feature-users/jest.config.cts",
+        "tsConfig": "libs/frontend/features/feature-users/tsconfig.spec.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

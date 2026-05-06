@@ -42,6 +42,11 @@
           "codeCoverage": true
         }
       }
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     }
   },
   "generators": {
@@ -76,6 +81,7 @@
     "@nx/angular:library": {
       "linter": "eslint",
       "unitTestRunner": "jest",
+      "strict": false,
       "style": "scss",
       "standalone": true,
       "tags": "scope:frontend,type:ui"
@@ -92,6 +98,7 @@
     }
   },
   "plugins": [
+    "workspace-tools",
     {
       "plugin": "@nx/eslint/plugin",
       "options": {

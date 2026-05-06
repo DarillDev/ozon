@@ -1,4 +1,14 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(npx nx *)",
+      "Bash(pnpm nx *)",
+      "Bash(pnpm dlx nx-mcp*)",
+      "Bash(pnpm dlx angular-mcp*)",
+      "Read(//Users/schekan/WebstormProjects/bbp/libs/frontend/admin/shared/data-access-api/**)"
+    ]
+  },
+  "enabledMcpjsonServers": ["nx", "angular"],
   "enabledPlugins": {
     "nx@nx-claude-plugins": true
   },
@@ -9,10 +19,5 @@
         "repo": "nrwl/nx-ai-agents-config"
       }
     }
-  },
-  "permissions": {
-    "allow": [
-      "Bash(npx nx *)"
-    ]
   }
 }

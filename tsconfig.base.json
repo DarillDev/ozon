@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
+    "baseUrl": ".",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "bundler",
@@ -23,7 +24,14 @@
         "./libs/frontend/data-access-api/src/lib/controllers/assets/index.ts"
       ],
       "@ozon/frontend/util-utils": ["./libs/frontend/util-utils/src/index.ts"],
-      "@ozon/backend/util-utils": ["./libs/backend/util-utils/src/index.ts"]
+      "@ozon/backend/util-utils": ["./libs/backend/util-utils/src/index.ts"],
+      "@ozon/frontend/features/feature-shell": [
+        "./libs/frontend/features/feature-shell/src/index.ts"
+      ],
+      "workspace-tools": ["./tools/workspace-tools/src/index.ts"],
+      "@ozon/frontend/features/feature-users": [
+        "libs/frontend/features/feature-users/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

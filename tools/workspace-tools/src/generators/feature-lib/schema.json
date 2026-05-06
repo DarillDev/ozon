@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "GenerateLib",
+  "title": "Generate Library",
+  "description": "Generates a typed library under libs/{scope}/[directory/]{type}-{name}",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Library name without type prefix (e.g. 'shell', 'api', 'kit')",
+      "$default": { "$source": "argv", "index": 0 },
+      "x-prompt": "Library name (without type prefix)?"
+    },
+    "type": {
+      "type": "string",
+      "description": "Library type — determines prefix and tags",
+      "enum": ["feature", "data-access", "ui", "model", "util"],
+      "x-prompt": {
+        "message": "Library type?",
+        "type": "list",
+        "items": [
+          { "value": "feature",     "label": "feature      — page-level smart components" },
+          { "value": "data-access", "label": "data-access  — API services, stores" },
+          { "value": "ui",          "label": "ui           — presentational components" },
+          { "value": "model",       "label": "model        — interfaces, enums, types" },
+          { "value": "util",        "label": "util         — pure helpers, pipes" }
+        ]
+      }
+    },
+    "scope": {
+      "type": "string",
+      "description": "Scope: frontend (Angular) or backend (NestJS/Node)",
+      "enum": ["frontend", "backend"],
+      "default": "frontend",
+      "x-prompt": {
+        "message": "Scope?",
+        "type": "list",
+        "items": [
+          { "value": "frontend", "label": "frontend" },
+          { "value": "backend",  "label": "backend" }
+        ]
+      }
+    },
+    "directory": {
+      "type": "string",
+      "description": "Optional subdirectory under libs/{scope}/ (e.g. 'features', 'admin/internal'). Leave empty to place directly under libs/{scope}/."
+    }
+  },
+  "required": ["name", "type", "scope"]
+}
