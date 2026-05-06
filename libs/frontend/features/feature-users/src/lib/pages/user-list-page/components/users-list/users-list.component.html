@@ -1,0 +1,29 @@
+<table class="users-table">
+  <thead>
+    <tr class="header-row">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Is Active</th>
+      <th>Sex</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of users(); track user.id) {
+      <tr class="row">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.isActive }}</td>
+        <td>{{ user.sex }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<feature-users-paginator
+  [page]="page()"
+  [limit]="limit()"
+  [total]="total()"
+  (pageChange)="onPageChange.emit($event)"
+/>

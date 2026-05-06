@@ -1,10 +1,13 @@
-<p>FeatureUsers works!</p>
-
 <input
   type="text"
   [formField]="searchForm.query"
   placeholder="Search users..."
 />
-@for (user of users(); track user.id) {
-  <p>{{ user.name }}</p>
-}
+
+<feature-users-list
+  [users]="users()"
+  [page]="page()"
+  [limit]="limit()"
+  [total]="total()"
+  (onPageChange)="onPageChange($event)"
+/>

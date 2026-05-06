@@ -9,6 +9,8 @@ export class UserMapper {
       email: user.email,
       createdAt: user.createdAt.toISOString(),
       balanceInRat: user.balanceInRat,
+      isActive: user.isActive,
+      sex: user.sex,
     };
   }
 }

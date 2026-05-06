@@ -21,9 +21,9 @@ export class UsersService {
       name,
       sex,
       isActive,
-      page = DEFAULT_PAGE,
-      limit = DEFAULT_LIMIT,
     } = query;
+    const page = Number(query.page) || DEFAULT_PAGE;
+    const limit = Number(query.limit) || DEFAULT_LIMIT;
 
     let users = [...this.storage.values()];
 

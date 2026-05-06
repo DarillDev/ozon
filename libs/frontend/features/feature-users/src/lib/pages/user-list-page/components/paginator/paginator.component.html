@@ -1,0 +1,31 @@
+<div class="paginator">
+  <button class="paginator__btn" [disabled]="!hasPrev()" (click)="prev()">
+    &laquo;
+  </button>
+
+  @for (p of pages(); track p) {
+    <button
+      class="paginator__btn"
+      [class.paginator__btn--active]="p === page()"
+      (click)="goTo(p)"
+    >
+      {{ p }}
+    </button>
+  }
+
+  <button class="paginator__btn" [disabled]="!hasNext()" (click)="next()">
+    &raquo;
+  </button>
+
+  <span class="paginator__info">{{ page() }} / {{ totalPages() }}</span>
+
+  <select
+    class="paginator__limit"
+    [value]="limit()"
+    (change)="limitChange.emit(+$any($event.target).value)"
+  >
+    @for (opt of limitOptions; track opt) {
+      <option [value]="opt">{{ opt }} / page</option>
+    }
+  </select>
+</div>
