@@ -10,18 +10,4 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrl: './app.component.scss',
   imports: [RouterOutlet],
 })
-export class AppComponent {
-  private readonly usersApiService = inject(UsersApiService);
-  private readonly assetsApiService = inject(AssetsApiService);
-
-  protected readonly usersList = toSignal(this.usersApiService.getUsers(), {
-    initialValue: [],
-  });
-
-  protected readonly assetsList = toSignal(
-    this.assetsApiService.getAssetsStream(),
-    {
-      initialValue: [],
-    },
-  );
-}
+export class AppComponent {}

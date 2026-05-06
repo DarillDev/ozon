@@ -384,3 +384,23 @@ NestJS 11, компилируется через Webpack (`NxAppWebpackPlugin`).
 - Skip NgModule: `true`
 
 Не переопределяй эти настройки без явной необходимости.
+
+---
+
+## Angular Signal Forms (`@angular/forms/signals`)
+
+Реальный экспериментальный пакет в Angular 21. Оба подхода валидны — Signal Forms и `FormControl` + `toSignal`. Основные паттерны Signal Forms:
+
+- `form(writableSignal, schemaFn)` → `FieldTree<TModel>`
+- В `schemaFn` параметр — это `SchemaPathTree<TModel>`: `(p) => { debounce(p.query, 300); }`
+- `fieldTree.query()` → `FieldState<string>`, `fieldTree.query().value()` → debounced `WritableSignal`
+- `[formField]="fieldTree.query"` — директива в шаблоне, импортируется как `FormField`
+- **Важно**: если поле в интерфейсе optional (`query?: string`), тип становится `undefined | FieldTree<string>` → TS2722. Используй required поля в form-интерфейсах.
+
+## httpResource
+
+- Возвращает `HttpResourceRef<T>` (не `HttpResource<T>`)
+- Параметры запроса **обязательно** читать внутри колбека для реактивности:
+  ```typescript
+  httpResource<T>(() => ({ url, params: buildParams(querySignal()) }))
+  ```
