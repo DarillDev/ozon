@@ -31,7 +31,8 @@
       "workspace-tools": ["./tools/workspace-tools/src/index.ts"],
       "@ozon/frontend/features/feature-users": [
         "libs/frontend/features/feature-users/src/index.ts"
-      ]
+      ],
+      "@ozon/shared/model-dtos": ["libs/shared/model-dtos/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

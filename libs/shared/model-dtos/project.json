@@ -1,0 +1,16 @@
+{
+  "name": "model-dtos",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/model-dtos/src",
+  "projectType": "library",
+  "tags": ["scope:shared", "type:model"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared/model-dtos/jest.config.cts"
+      }
+    }
+  }
+}

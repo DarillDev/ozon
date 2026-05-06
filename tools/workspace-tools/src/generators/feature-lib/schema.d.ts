@@ -1,6 +1,6 @@
 export interface GenerateLibSchema {
   name: string;
   type: 'feature' | 'data-access' | 'ui' | 'model' | 'util';
-  scope: 'frontend' | 'backend';
+  scope: 'frontend' | 'backend' | 'shared';
   directory?: string;
 }

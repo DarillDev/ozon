@@ -19,25 +19,38 @@
         "message": "Library type?",
         "type": "list",
         "items": [
-          { "value": "feature",     "label": "feature      — page-level smart components" },
-          { "value": "data-access", "label": "data-access  — API services, stores" },
-          { "value": "ui",          "label": "ui           — presentational components" },
-          { "value": "model",       "label": "model        — interfaces, enums, types" },
-          { "value": "util",        "label": "util         — pure helpers, pipes" }
+          {
+            "value": "feature",
+            "label": "feature      — page-level smart components"
+          },
+          {
+            "value": "data-access",
+            "label": "data-access  — API services, stores"
+          },
+          {
+            "value": "ui",
+            "label": "ui           — presentational components"
+          },
+          {
+            "value": "model",
+            "label": "model        — interfaces, enums, types"
+          },
+          { "value": "util", "label": "util         — pure helpers, pipes" }
         ]
       }
     },
     "scope": {
       "type": "string",
       "description": "Scope: frontend (Angular) or backend (NestJS/Node)",
-      "enum": ["frontend", "backend"],
+      "enum": ["frontend", "backend", "shared"],
       "default": "frontend",
       "x-prompt": {
         "message": "Scope?",
         "type": "list",
         "items": [
           { "value": "frontend", "label": "frontend" },
-          { "value": "backend",  "label": "backend" }
+          { "value": "backend", "label": "backend" },
+          { "value": "shared", "label": "shared" }
         ]
       }
     },
