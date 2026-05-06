@@ -5,6 +5,7 @@ import { GenerateLibSchema } from './schema';
 
 export async function generateLibGenerator(tree: Tree, options: GenerateLibSchema) {
   const libName = `${options.type}-${options.name}`;
+  const projectName = `${options.scope}-${libName}`;
   const basePath = options.directory
     ? `libs/${options.scope}/${options.directory}/${libName}`
     : `libs/${options.scope}/${libName}`;
@@ -18,7 +19,7 @@ export async function generateLibGenerator(tree: Tree, options: GenerateLibSchem
   if (options.scope === 'frontend') {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     installTask = await angularLibraryGenerator(tree, {
-      name: libName,
+      name: projectName,
       directory: basePath,
       tags,
       standalone: true,
@@ -30,7 +31,7 @@ export async function generateLibGenerator(tree: Tree, options: GenerateLibSchem
     });
   } else {
     installTask = await jsLibraryGenerator(tree, {
-      name: libName,
+      name: projectName,
       directory: basePath,
       tags,
       bundler: 'none',
@@ -43,7 +44,7 @@ export async function generateLibGenerator(tree: Tree, options: GenerateLibSchem
     const paths: Record<string, string[]> = json.compilerOptions.paths ?? {};
     // Remove any unscoped alias Nx may have auto-added
     for (const key of Object.keys(paths)) {
-      if (key === libName) delete paths[key];
+      if (key === libName || key === projectName) delete paths[key];
     }
     paths[aliasBase] = [`${basePath}/src/index.ts`];
     json.compilerOptions.paths = paths;

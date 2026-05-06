@@ -1,5 +1,5 @@
 {
-  "name": "model-dtos",
+  "name": "shared-model-dtos",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/model-dtos/src",
   "projectType": "library",

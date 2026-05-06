@@ -1,5 +1,5 @@
 {
-  "name": "feature-shell",
+  "name": "frontend-feature-shell",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/frontend/features/feature-shell/src",
   "prefix": "lib",

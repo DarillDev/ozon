@@ -32,7 +32,8 @@
       "@ozon/frontend/features/feature-users": [
         "libs/frontend/features/feature-users/src/index.ts"
       ],
-      "@ozon/shared/model-dtos": ["libs/shared/model-dtos/src/index.ts"]
+      "@ozon/shared/model-dtos": ["libs/shared/model-dtos/src/index.ts"],
+      "@ozon/backend/feature-users": ["libs/backend/feature-users/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

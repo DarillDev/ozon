@@ -1,5 +1,5 @@
 {
-  "name": "ui-kit",
+  "name": "frontend-ui-kit",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/frontend/ui-kit/src",
   "prefix": "lib",
