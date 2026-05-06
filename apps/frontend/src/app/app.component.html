@@ -1,7 +1,10 @@
 @let users = usersList();
+@let asset = assetsList()[0];
 
 @for (user of users; track user) {
   <p>{{ user }}</p>
 }
+
+<p>{{ asset.name }}: {{ asset.value }}</p>
 
 <router-outlet></router-outlet>
